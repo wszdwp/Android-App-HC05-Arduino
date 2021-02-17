@@ -126,6 +126,7 @@ public class PairDeviceActivity extends AppCompatActivity implements CustomItemC
         BluetoothDevice device = pairedDevices.get(position);
         Log.v(TAG, "position " + position + " item clicked");
         Intent intent = new Intent(PairDeviceActivity.this, ControlDeviceActivity.class);
+        intent.putExtra("name", device.getName());
         intent.putExtra("address", device.getAddress());
         startActivity(intent);
     }

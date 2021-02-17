@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.Intent;
 import android.os.AsyncTask;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,11 +18,11 @@ import java.util.UUID;
 
 public class ControlDeviceActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button comboBtn1, comboBtn2, comboBtn3, comboBtn4, comboBtn5, disConnectBtn;
-    private TextView lumn;
     private ProgressDialog progress;
 
-    private String address = null;
+    private String name;
+    private String address;
+
     private BluetoothAdapter myBluetooth = null;
     private BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
@@ -32,20 +33,11 @@ public class ControlDeviceActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.control_device);
 
-        address = getIntent().getStringExtra("address");
-        findViews();
+        Intent intent = getIntent();
+        name = intent.getStringExtra("name");
+        address = intent.getStringExtra("address");
 
         new ConnectBT().execute();
-    }
-
-    private void findViews() {
-        comboBtn1 = findViewById(R.id.comboBtn1);
-        comboBtn1 = findViewById(R.id.comboBtn2);
-        comboBtn1 = findViewById(R.id.comboBtn3);
-        comboBtn1 = findViewById(R.id.comboBtn4);
-        comboBtn1 = findViewById(R.id.comboBtn5);
-        disConnectBtn = findViewById(R.id.disconnectBtn);
-        lumn = findViewById(R.id.textView2);
     }
 
     @Override
@@ -76,7 +68,7 @@ public class ControlDeviceActivity extends AppCompatActivity implements View.OnC
             try {
                 btSocket.getOutputStream().write(number.getBytes());
             } catch (IOException e) {
-                showToastMessage("Error while sending Signal.");
+                showToastMessage("Error while sending Signal " + number);
             }
         }
     }
@@ -102,7 +94,7 @@ public class ControlDeviceActivity extends AppCompatActivity implements View.OnC
 
         @Override
         protected  void onPreExecute() {
-            progress = ProgressDialog.show(ControlDeviceActivity.this, "Connecting...", "Please Wait!!!");
+            progress = ProgressDialog.show(ControlDeviceActivity.this, "Connecting " + name , "Address: " + address);
         }
 
         @Override
@@ -110,8 +102,8 @@ public class ControlDeviceActivity extends AppCompatActivity implements View.OnC
             try {
                 if (btSocket == null || !isBtConnected) {
                     myBluetooth = BluetoothAdapter.getDefaultAdapter();
-                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);
-                    btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);
+                    BluetoothDevice bluetoothDevice = myBluetooth.getRemoteDevice(address);
+                    btSocket = bluetoothDevice.createInsecureRfcommSocketToServiceRecord(myUUID);
                     BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
                     btSocket.connect();
                 }

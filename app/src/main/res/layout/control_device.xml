@@ -1,142 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.danyal.bluetoothhc05.ControlDeviceActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:layout_height="match_parent" >
 
-        <LinearLayout
+        <Button
+            android:id="@+id/comboBtn1"
+            android:layout_margin="5dp"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_light"
+            android:text="Combo 1"
+            android:layout_alignParentLeft="true" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="progress"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="30dp"
-                android:gravity="center_horizontal" />
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/comboBtn2"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_below="@id/comboBtn1"
+            android:layout_margin="5dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="Combo 2" />
 
-            <Button
-                android:id="@+id/comboBtn1"
-                android:layout_margin="5dp"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/holo_blue_light"
-                android:text="Combo 1"
-                tools:layout_editor_absoluteX="148dp"
-                tools:layout_editor_absoluteY="88dp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/comboBtn3"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="5dp"
+            android:layout_below="@id/comboBtn2"
+            android:background="@android:color/holo_blue_light"
+            android:text="Combo 3" />
 
-            <Button
-                android:id="@+id/comboBtn2"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/holo_blue_light"
-                android:text="Combo 2"
-                tools:layout_editor_absoluteX="192dp"
-                tools:layout_editor_absoluteY="64dp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/comboBtn4"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="5dp"
+            android:layout_below="@id/comboBtn3"
+            android:background="@android:color/holo_blue_light"
+            android:text="Combo 4" />
 
-            <Button
-                android:id="@+id/comboBtn3"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/holo_blue_light"
-                android:text="Combo 3"
-                tools:layout_editor_absoluteX="61dp"
-                tools:layout_editor_absoluteY="134dp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/comboBtn5"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="5dp"
+            android:layout_below="@id/comboBtn4"
+            android:background="@android:color/holo_blue_light"
+            android:text="Combo 5" />
 
-            <Button
-                android:id="@+id/comboBtn4"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/holo_blue_light"
-                android:text="Combo 4"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="168dp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/disconnectBtn"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/comboBtn5"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/holo_blue_light"
-                android:text="Combo 5"
-                tools:layout_editor_absoluteX="112dp"
-                tools:layout_editor_absoluteY="336dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/disconnectBtn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_light"
-                android:text="Disconnect Pairing"
-                tools:layout_editor_absoluteX="108dp"
-                tools:layout_editor_absoluteY="154dp" />
-        </LinearLayout>
-
-    </LinearLayout>
+            android:layout_margin="5dp"
+            android:layout_below="@id/comboBtn5"
+            android:background="@android:color/holo_red_light"
+            android:text="Disconnect Paired Device" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
