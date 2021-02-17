@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android-App-HC05-Arduino.iml" filepath="$PROJECT_DIR$/.idea/modules/Android-App-HC05-Arduino.iml" group="Android-App-HC05-Arduino" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android-App-HC05-Arduino-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android-App-HC05-Arduino-app.iml" group="Android-App-HC05-Arduino/app" />
       <module fileurl="file://$PROJECT_DIR$/BluetoothHC05.iml" filepath="$PROJECT_DIR$/BluetoothHC05.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
